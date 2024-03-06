@@ -1,18 +1,13 @@
-var inputElement = document.getElementById('inputNumber')
-var button100 = document.getElementById('button100')
-var button500 = document.getElementById('button500')
-var button1000 = document.getElementById('button1000')
-var buttonMono = document.getElementById('button-mono')
-var buttonGpay = document.getElementById('button-gpay')
-var btnAnotherBank = document.getElementById('another-bank')
-var resultMoney = document.getElementById('accumulated-money')
-var dollarIcon = document.getElementById('dollar')
-var nameDonater = document.getElementById('name-donater')
-var comments = document.getElementById('comments')
-var numberCard = document.getElementById('number-card')
-var mounth = document.getElementById('mounth')
-var day = document.getElementById('day')
-var cvv2 = document.getElementById('cvv2')
+'use strict'
+
+const inputElement = document.getElementById('inputNumber'),
+  button500 = document.getElementById('button500'),
+  button1000 = document.getElementById('button1000'),
+  buttonMono = document.getElementById('button-mono'),
+  buttonGpay = document.getElementById('button-gpay'),
+  btnAnotherBank = document.getElementById('another-bank'),
+  resultMoney = document.getElementById('accumulated-money'),
+  dollarIcon = document.getElementById('dollar')
 
 button100.addEventListener('click', function () {
   addMoney(100)
@@ -28,29 +23,20 @@ button1000.addEventListener('click', function () {
 
 buttonMono.addEventListener('click', function () {
   displayMoney()
-  console.log(
-    `Користувач: ${nameDonater.value};\nКоментар: ${comments.value};\nСума донату: ${inputElement.value} грн.`
-  )
 })
 
 buttonGpay.addEventListener('click', function () {
   displayMoney()
-  console.log(
-    `Користувач: ${nameDonater.value};\nКоментар: ${comments.value};\nСума донату: ${inputElement.value} грн.`
-  )
 })
 
 btnAnotherBank.addEventListener('click', function () {
   displayMoney()
-  console.log(
-    `Користувач: ${nameDonater.value};\nКоментар: ${comments.value};\nНомер картки: ${numberCard.value};\nДані картки в форматі мм/рр/cvv2: ${mounth.value}/${day.value}/${cvv2.value};\nСума донату: ${inputElement.value} грн.`
-  )
 })
 
 //кнопки (100, 500, 1000)
 function addMoney(value) {
-  var number = parseInt(inputElement.value)
-  var newNumb = number + value
+  let number = parseInt(inputElement.value),
+    newNumb = number + value
   inputElement.value = newNumb
   inputElement.style.color = 'black'
   dollarIcon.style.color = 'black'
@@ -58,8 +44,8 @@ function addMoney(value) {
 
 //вивести результат в накопичено
 function displayMoney() {
-  var nowMoney = parseInt(inputElement.value)
-  var futureMoney = parseInt(resultMoney.textContent)
+  let nowMoney = parseInt(inputElement.value),
+    futureMoney = parseInt(resultMoney.textContent)
   if (isNaN(futureMoney)) {
     futureMoney = 0
   }
@@ -73,9 +59,9 @@ function displayMoney() {
 
 //відкрити вкладку з іншої картки, глянути завтра в jQuerry
 document.getElementById('toggleButton').addEventListener('click', function () {
-  var element = document.getElementById('hiddenElement')
-  var elementTwo = document.getElementById('toggleButton')
-  var elementThree = document.getElementById('hideHr')
+  let element = document.getElementById('hiddenElement')
+    elementTwo = document.getElementById('toggleButton')
+    elementThree = document.getElementById('hideHr')
   if (element.style.display === 'none') {
     element.style.display = 'block'
     elementTwo.style.display = 'none'
@@ -87,9 +73,9 @@ document.getElementById('toggleButton').addEventListener('click', function () {
 
 //додаємо повідомлення що значення менше 10 і більше 29999
 function changeColor() {
-  var errorValue = document.getElementById('error-value')
-  var btnDonate = document.getElementById('btn-donate')
-  var value = parseInt(inputElement.value)
+  let errorValue = document.getElementById('error-value'),
+    btnDonate = document.getElementById('btn-donate'),
+    value = parseInt(inputElement.value)
 
   if (value < 10 || value > 29999) {
     inputElement.style.color = '#d984a9'
