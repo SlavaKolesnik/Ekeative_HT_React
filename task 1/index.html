@@ -21,11 +21,11 @@
           alt="monobank logo"
         />
         <div class="jar">
-          <img class="jar__bg" src="https://send.monobank.ua/img/jar_bg.png"  alt="send-bank"/>
+          <img class="jar__bg" src="https://send.monobank.ua/img/jar_bg.png"  alt="jar"/>
           <img
             class="jar__glass"
             src="https://send.monobank.ua/img/jar/uah_50.png"
-            alt="bank"
+            alt="glass"
           />
           <p class="jar__owner">Артем К. збирає</p>
           <p class="jar__name">На ремонт медеваку</p>
@@ -48,7 +48,7 @@
             <img
               src="https://send.monobank.ua/img/collected.svg"
               class="stats-data__icon"
-              alt="stats"
+              alt="stats-data__label"
             />
             <div class="stats-data__text-container">
               <div class="stats-data__label">Накопичено</div>
@@ -59,7 +59,7 @@
             <img
               src="https://send.monobank.ua/img/target.svg"
               class="stats-data__icon"
-              alt="send"
+              alt="stats-data"
             />
             <div class="stats-data__text-container">
               <div class="stats-data__label">Ціль</div>
@@ -86,7 +86,6 @@
                   min="10"
                   max="29999"
                   value="0"
-                
                   id="inputNumber"
                   oninput="changeColor()"
                 />
@@ -115,22 +114,9 @@
             </div>
           </div>
         </div>
-        <!-- <div class="placeholder-form">
-          <div class="data-donaters placeholder-container">
-            <input class="data-button" type="text" placeholder=" " />
-            <label>Ваше ім'я (необов'язково)</label>
-          </div>
-          <div class="placeholder-container">
-            <input type="text" placeholder=" " />
-            <label>Имя</label>
-          </div>
-          <div class="placeholder-container">
-            <input type="text" placeholder=" " />
-            <label>Отчество</label>
-          </div>
-        </div> -->
         <div class="data-donaters">
           <input
+            id="name-donater"
             class="data-button"
             type="text"
             name="fio"
@@ -140,7 +126,9 @@
             onfocus="if(this.placeholder == 'Ваше ім\'я (необов\'язково)') { this.placeholder = ''; }"
             onblur="if(this.placeholder == '') { this.placeholder = 'Ваше ім\'я (необов\'язково)'; }"
           />
+          <!-- <label>Ваше ім'я (необов'язково)</label> -->
           <input
+            id="comments"
             class="data-button"
             type="text"
             name="fio"
@@ -184,6 +172,7 @@
           </div>
           <div class="data-donaters">
             <input
+              id="number-card"
               class="data-button"
               type="text"
               name="fio"
@@ -196,6 +185,7 @@
           </div>
           <div class="data-donaters data-button cvv">
             <input
+              id="mounth"
               class="data-type"
               type="text"
               name="mounth"
@@ -207,6 +197,7 @@
             />
             <hr class="vertical-hr" />
             <input
+              id="day"
               class="data-type"
               type="text"
               name="fio"
@@ -218,6 +209,7 @@
             />
             <hr class="vertical-hr" />
             <input
+              id="cvv2"
               class="data-type"
               type="text"
               name="fio"
