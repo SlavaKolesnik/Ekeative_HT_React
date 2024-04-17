@@ -1,0 +1,3 @@
+встановлені бібліотеки
+npm i --save @fortawesome/fontawesome-svg-core
+npm install react-datepicker --save
